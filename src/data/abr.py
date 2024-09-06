@@ -4,14 +4,11 @@ import cv2
 import matplotlib.pyplot as plt
 import numpy as np
 from pycocotools.coco import COCO
-from torchvision import datapoints
 from PIL import Image
 import PIL
 import random
 import torch
 from src.data.cococl import data_setting
-
-from typing import List, Dict
 
 class ABR(object):
     def __init__(self, 
