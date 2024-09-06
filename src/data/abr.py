@@ -54,13 +54,11 @@ class ABR(object):
         gts = self.get_groundtruth(img_id)
         
         is_mixup, is_mosaic = False, False
-        if random.uniform(0, 1) < 0.75:
-            if random.randint(0, 1) == 0:
-                is_mixup = True
-            else:
-                is_mosaic = True
-        
-        
+        if random.randint(0, 1) == 0:
+            is_mixup = True
+        else:
+            is_mosaic = True
+
         if is_mixup:
             img, gts = self.play_mixup(img, gts, self.buffered_boxes[:3])
         elif is_mosaic:

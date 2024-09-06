@@ -147,10 +147,10 @@ def train_one_epoch(
         samples = samples.to(device)
         targets = [{k: v.to(device) for k, v in t.items()} for t in targets]
 
-        if distill_attn:
+        if distill_attn: 
+            #abc
             teacher_attn = compute_attn(teacher_model, samples, targets, device)
             student_attn = compute_attn(model, samples, targets, device)
-
             location_loss = torch.nn.functional.mse_loss(student_attn, teacher_attn)
 
             del teacher_attn, student_attn

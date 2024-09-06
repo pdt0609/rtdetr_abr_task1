@@ -20,27 +20,15 @@ def data_setting(ratio: str, random_setting: bool = False):
     flatten_list = lambda nested_list: [
         item for sublist in nested_list for item in sublist
     ]
-    total_classes = list(range(1, 91))
+    total_classes = list(range(0, 221))
     divided_classes = [
-        list(range(1, 46)),  # 45 classes
-        list(range(46, 56)),  # 10 classes
-        list(range(56, 66)),  # 10 classes
-        list(range(66, 80)),  # 14 classes
-        list(range(80, 91)),  # 11 classes
+        list(range(0, 150)),  
+        list(range(150, 221)),  
+
     ]
 
     ratio_to_classes = {
-        "4040": [divided_classes[0], flatten_list(divided_classes[1:])],
-        "402020": [
-            divided_classes[0],
-            flatten_list(divided_classes[1:3]),
-            flatten_list(divided_classes[3:]),
-        ],
-        "4010101010": divided_classes,
-        "7010": [flatten_list(divided_classes[:-1]), divided_classes[-1]],
-        "80": [total_classes, total_classes],
-        "1010": [list(range(1, 11)), list(range(11, 22))],
-        "20": [list(range(1, 22))],
+    "15071": [flatten_list(divided_classes[:-1]), divided_classes[-1]]
     }
 
     divided_classes_detail = ratio_to_classes.get(ratio, total_classes)

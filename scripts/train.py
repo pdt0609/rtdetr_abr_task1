@@ -32,6 +32,8 @@ def main(
     abr = ABR(
         images_dir = args.images_dir,
         ann_file = args.ann_file,
+        buffered_images_dir = args.buffered_images_dir,
+        data_ratio = args.data_ratio
     )
     abr.save_buffer_image_and_annotations()
     
@@ -101,6 +103,14 @@ if __name__ == "__main__":
     parser.add_argument(
         "--ann_file",
         default="mtsd_train.json"
+    )
+    parser.add_argument(
+        "--buffered_images_dir",
+        default="./buffer"
+    )
+    parser.add_argument(
+        "--data_ratio",
+        default="15071"
     )
 
     args = parser.parse_args()

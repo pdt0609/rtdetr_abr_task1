@@ -1,6 +1,7 @@
 task: detection
 
-num_classes: 80
+num_classes: 221
+    
 remap_mscoco_category: True
 
 train_dataloader:
@@ -8,9 +9,8 @@ train_dataloader:
   dataset:
     type: CocoDetectionCL
 
-    img_folder: ../coco/train2017/
-    ann_file: ../coco/annotations/instances_train2017.json
-
+    img_folder: ./mapillary-traffic-sign-dataset/mtsd_fully_annotated_train_images/images
+    ann_file: ./mtsd-preprocessing/train_output_file_coco.json
     transforms:
       type: Compose
       ops: ~
@@ -20,9 +20,8 @@ val_dataloader:
   dataset:
     type: CocoDetectionCL
 
-    img_folder: ../coco/val2017/
-    ann_file: ../coco/annotations/instances_val2017.json
-
+    img_folder: ./mapillary-traffic-sign-dataset/mtsd_v2_fully_annotated_images.val.zip/images
+    ann_file: ./mtsd-preprocessing/val_output_file_coco.json
     transforms:
       type: Compose
       ops: ~
