@@ -1,0 +1,17 @@
+# CL General
+start_task: 0
+total_tasks: 2
+
+# CL Strategy
+pseudo_label: False
+distill_attn: False
+teacher_path: "../detrw/4040/4040_t0_e10_ap5853.pth"
+
+# CL Rehearsal
+rehearsal: False
+
+# CL Eval
+fpp: False
+
+# WandB
+wandb_name: "7010_t0_10e"
