@@ -98,11 +98,11 @@ if __name__ == "__main__":
     )
     parser.add_argument(
         "--images_dir",
-        default="MTSD"
+        default="./mapillary-traffic-sign-dataset/mtsd_fully_annotated_train_images/images"
     )
     parser.add_argument(
         "--ann_file",
-        default="mtsd_train.json"
+        default="./mtsd-preprocessing/train_output_file_coco.json"
     )
     parser.add_argument(
         "--buffered_images_dir",
